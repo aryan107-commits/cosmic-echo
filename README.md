@@ -76,5 +76,5 @@ reproducible state.
 ---
 
 <p align="center">
-  <i>Curiosity is useful when it produces something testable.</i>
+  <i>Everything I'm not made me everything I am.</i>
 </p>
