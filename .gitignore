@@ -1,3 +1,5 @@
+
+# Python
 .venv/
 __pycache__/
 *.py[cod]
@@ -5,3 +7,15 @@ __pycache__/
 .vscode/
 .ipynb_checkpoints/
 .DS_Store
+
+# Raw scientific data
+data/raw/
+
+# Intermediate and processed numerical data
+data/processed/*.npz
+data/processed/*.csv
+
+# Local downloaded datasets
+data/*.csv
+# Keep all local research data out of Git
+data/
