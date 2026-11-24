@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080d15">
+  <meta name="description" content="COSMIC ECHO is an independent scientific computing project exploring astronomical image backgrounds, source masks and statistical diagnostics in SPHEREx observations.">
+  <meta property="og:title" content="COSMIC ECHO — An Observatory for the Invisible">
+  <meta property="og:description" content="Exploring the structure behind astronomical observations.">
+  <meta property="og:type" content="website">
+  <title>COSMIC ECHO — An Observatory for the Invisible</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='23' fill='none' stroke='%23d7b77a' stroke-width='2'/%3E%3Cellipse cx='32' cy='32' rx='29' ry='10' fill='none' stroke='%238ca7c5' stroke-width='1.5' transform='rotate(-28 32 32)'/%3E%3Ccircle cx='32' cy='32' r='4' fill='%23f2e8d5'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <canvas class="starfield" id="starfield" aria-hidden="true"></canvas>
+
+  <header class="site-header" id="top">
+    <a class="brand" href="#top" aria-label="COSMIC ECHO home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 48 48" role="img">
+          <circle cx="24" cy="24" r="15.5"></circle>
+          <ellipse cx="24" cy="24" rx="21" ry="7.5" transform="rotate(-28 24 24)"></ellipse>
+          <circle class="brand-core" cx="24" cy="24" r="3"></circle>
+        </svg>
+      </span>
+      <span class="brand-wordmark">COSMIC <span>ECHO</span></span>
+      <span class="brand-index">RESEARCH / 01</span>
+    </a>
+
+    <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-nav">
+      <span></span><span></span>
+    </button>
+
+    <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation">
+      <a href="#observatory">Observatory</a>
+      <a href="#method">Method</a>
+      <a href="#validation">Validation</a>
+      <a href="#project">Project</a>
+      <a class="nav-github" href="https://github.com/aryan107-commits/cosmic-echo" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero section-shell" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-line"></span> INDEPENDENT ASTRONOMICAL COMPUTING</p>
+        <p class="hero-edition">A FIELD GUIDE TO THE UNSEEN <span>—</span> VOL. 01</p>
+        <h1 id="hero-title">The sky is full of signal.<br><em>So is the space between.</em></h1>
+        <p class="hero-lede">COSMIC ECHO explores the structure behind astronomical observations — examining image backgrounds, source masks and spatial diagnostics through reproducible Python workflows.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#observatory">Enter the observatory <span aria-hidden="true">↗</span></a>
+          <a class="text-link" href="#method">Explore the method <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="hero-meta">
+          <span><i class="status-dot"></i> RESEARCH IN PROGRESS</span>
+          <span>SPHEREx / IMAGE ANALYSIS</span>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="visual-topline">
+          <span>FIELD STUDY <b>CE–001</b></span>
+          <span class="live-label"><i></i> INTERACTIVE MODEL</span>
+        </div>
+        <div class="field-frame">
+          <canvas id="hero-field" width="1000" height="650" role="img" aria-label="Illustrative synthetic astronomical field. Use the layer controls to change the visualization."></canvas>
+          <div class="field-coordinates" aria-hidden="true">
+            <span>+00° 00′ 00″</span>
+            <span>SIMULATED FIELD</span>
+            <span>00h 00m 00s</span>
+          </div>
+          <div class="field-crosshair" aria-hidden="true"><span></span><span></span></div>
+        </div>
+        <div class="field-controls" role="group" aria-label="Choose a simulated field layer">
+          <button class="layer-button is-active" type="button" data-layer="raw" aria-pressed="true">Signal</button>
+          <button class="layer-button" type="button" data-layer="mask" aria-pressed="false">Source mask</button>
+          <button class="layer-button" type="button" data-layer="background" aria-pressed="false">Background</button>
+          <button class="layer-button" type="button" data-layer="corrected" aria-pressed="false">Residual</button>
+        </div>
+        <p class="visual-caption"><span>FIG. 01</span> Synthetic field for interface demonstration only. Not a SPHEREx observation or scientific result.</p>
+      </div>
+
+      <div class="hero-bottom-note">
+        <span>01 / 04</span>
+        <span>LOOK CLOSER. QUESTION THE BACKGROUND.</span>
+        <a href="#observatory" aria-label="Scroll to the observatory">↓</a>
+      </div>
+    </section>
+
+    <section class="principle-strip" aria-label="Project principles">
+      <div><span class="strip-number">01</span><span>OBSERVATIONAL DATA</span></div>
+      <div><span class="strip-number">02</span><span>REPRODUCIBLE METHODS</span></div>
+      <div><span class="strip-number">03</span><span>INDEPENDENT VALIDATION</span></div>
+      <div><span class="strip-number">04</span><span>SCIENTIFIC CAUTION</span></div>
+    </section>
+
+    <section class="section-shell observatory-section" id="observatory" aria-labelledby="observatory-title">
+      <div class="section-heading reveal">
+        <div>
+          <p class="eyebrow"><span class="eyebrow-line"></span> THE OBSERVATORY / 01</p>
+          <h2 id="observatory-title">Look at the image.<br><em>Then look at how it was made.</em></h2>
+        </div>
+        <p class="section-intro">A small visual workbench for inspecting exported image previews. Bring a PNG, JPEG or WebP from your local workflow and adjust its display without changing the original file.</p>
+      </div>
+
+      <div class="workbench reveal">
+        <div class="workbench-main">
+          <div class="workbench-toolbar">
+            <div class="workbench-title">
+              <span class="toolbar-icon" aria-hidden="true">⌗</span>
+              <div><strong>IMAGE WORKBENCH</strong><small id="image-status">ILLUSTRATIVE FIELD / LOCAL PREVIEW</small></div>
+            </div>
+            <label class="upload-button" for="image-upload">＋ Load image</label>
+            <input id="image-upload" class="visually-hidden" type="file" accept="image/png,image/jpeg,image/webp">
+          </div>
+          <div class="workbench-stage">
+            <canvas id="workbench-canvas" width="1200" height="680" role="img" aria-label="Image preview with adjustable display controls"></canvas>
+            <div class="stage-corner stage-corner-tl">PREVIEW / 2D</div>
+            <div class="stage-corner stage-corner-br">LOCAL SESSION</div>
+          </div>
+          <div class="workbench-footer">
+            <span><i class="status-dot"></i> <span id="preview-state">READY FOR INSPECTION</span></span>
+            <span>DISPLAY ADJUSTMENTS ONLY</span>
+          </div>
+        </div>
+
+        <aside class="workbench-controls" aria-label="Image display controls">
+          <div class="control-heading">
+            <p class="eyebrow">DISPLAY CONSOLE</p>
+            <span class="console-number">CE / 01</span>
+          </div>
+          <p class="control-description">Tune the preview for visual inspection. These controls do not alter scientific data or replace a calibrated image stretch.</p>
+
+          <div class="range-control">
+            <div><label for="brightness">Brightness</label><output id="brightness-value" for="brightness">100%</output></div>
+            <input id="brightness" type="range" min="50" max="160" value="100">
+            <div class="range-ends"><span>DIM</span><span>BRIGHT</span></div>
+          </div>
+
+          <div class="range-control">
+            <div><label for="contrast">Contrast</label><output id="contrast-value" for="contrast">100%</output></div>
+            <input id="contrast" type="range" min="50" max="180" value="100">
+            <div class="range-ends"><span>SOFT</span><span>HARD</span></div>
+          </div>
+
+          <div class="range-control">
+            <div><label for="gamma">Gamma</label><output id="gamma-value" for="gamma">1.00</output></div>
+            <input id="gamma" type="range" min="50" max="180" value="100">
+            <div class="range-ends"><span>LOW</span><span>HIGH</span></div>
+          </div>
+
+          <div class="control-actions">
+            <button class="button button-secondary" id="reset-display" type="button">Reset display</button>
+            <button class="button button-primary button-save" id="save-preview" type="button">Save preview <span aria-hidden="true">↓</span></button>
+          </div>
+
+          <div class="privacy-note"><span aria-hidden="true">◈</span><p><strong>Private by design.</strong> Your selected image is processed in this browser session. It is not uploaded to a server.</p></div>
+          <p class="file-note">Supported preview formats: PNG, JPEG, WebP. FITS and NPZ analysis remains in the Python research pipeline.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="method-section" id="method" aria-labelledby="method-title">
+      <div class="section-shell">
+        <div class="section-heading reveal">
+          <div>
+            <p class="eyebrow"><span class="eyebrow-line"></span> THE METHOD / 02</p>
+            <h2 id="method-title">From observation<br><em>to a question worth asking.</em></h2>
+          </div>
+          <p class="section-intro">The workflow is intentionally modular. Each stage produces inspectable outputs, and each result remains open to review.</p>
+        </div>
+
+        <div class="method-layout">
+          <div class="method-rail" aria-hidden="true"><span></span></div>
+          <div class="method-list">
+            <article class="method-step reveal">
+              <span class="step-index">01</span>
+              <div class="step-content">
+                <div class="step-meta"><span>DATA ACCESS</span><span class="step-tag">SCRIPTED</span></div>
+                <h3>Find an observation</h3>
+                <p>Query the NASA/IPAC Infrared Science Archive (IRSA) for SPHEREx observations, then retrieve a selected FITS product.</p>
+                <a href="https://github.com/aryan107-commits/cosmic-echo/blob/main/scripts/query_spherex.py" target="_blank" rel="noreferrer">View archive query script ↗</a>
+              </div>
+              <span class="step-symbol" aria-hidden="true">⌁</span>
+            </article>
+
+            <article class="method-step reveal">
+              <span class="step-index">02</span>
+              <div class="step-content">
+                <div class="step-meta"><span>IMAGE INSPECTION</span><span class="step-tag">LOCAL INPUTS</span></div>
+                <h3>Understand the layers</h3>
+                <p>Inspect the FITS image and relevant data extensions before processing. The current workflow uses image and zodiacal-light layers; audit tools can also inspect variance and flag layers when present.</p>
+                <a href="https://github.com/aryan107-commits/cosmic-echo/blob/main/scripts/audit_mask_decomposition.py" target="_blank" rel="noreferrer">View mask audit script ↗</a>
+              </div>
+              <span class="step-symbol" aria-hidden="true">⌗</span>
+            </article>
+
+            <article class="method-step reveal">
+              <span class="step-index">03</span>
+              <div class="step-content">
+                <div class="step-meta"><span>MASK CONSTRUCTION</span><span class="step-tag">IN DEVELOPMENT</span></div>
+                <h3>Separate sources from exclusions</h3>
+                <p>Combine quality exclusions with detected-source regions. The V2 implementation keeps the source mask and combined mask as distinct products for inspection.</p>
+                <a href="https://github.com/aryan107-commits/cosmic-echo/blob/main/scripts/photutils_background_v2.py" target="_blank" rel="noreferrer">View background V2 script ↗</a>
+              </div>
+              <span class="step-symbol" aria-hidden="true">◌</span>
+            </article>
+
+            <article class="method-step reveal">
+              <span class="step-index">04</span>
+              <div class="step-content">
+                <div class="step-meta"><span>BACKGROUND MODEL</span><span class="step-tag">IMPLEMENTED</span></div>
+                <h3>Estimate the spatial background</h3>
+                <p>Use Photutils Background2D with a median estimator and sigma clipping to construct a spatial background model and its RMS map.</p>
+                <a href="https://photutils.readthedocs.io/en/stable/user_guide/background.html" target="_blank" rel="noreferrer">Photutils background guide ↗</a>
+              </div>
+              <span class="step-symbol" aria-hidden="true">∿</span>
+            </article>
+
+            <article class="method-step reveal">
+              <span class="step-index">05</span>
+              <div class="step-content">
+                <div class="step-meta"><span>DIAGNOSTIC CORRECTION</span><span class="step-tag">IMPLEMENTED</span></div>
+                <h3>Inspect the corrected residual</h3>
+                <p>The current V2 script subtracts the estimated background from the image-minus-zodiacal-light residual. The result is treated as a diagnostic product, not a final scientific conclusion.</p>
+                <a href="https://github.com/aryan107-commits/cosmic-echo/blob/main/scripts/photutils_background_v2.py" target="_blank" rel="noreferrer">Review the V2 implementation ↗</a>
+              </div>
+              <span class="step-symbol" aria-hidden="true">⊖</span>
+            </article>
+
+            <article class="method-step reveal">
+              <span class="step-index">06</span>
+              <div class="step-content">
+                <div class="step-meta"><span>VALIDATION</span><span class="step-tag">UNDER REVIEW</span></div>
+                <h3>Test what remains</h3>
+                <p>Audit mask geometry and inspect variance-normalized residuals, tile statistics and spatial correlations. A successful run is not, by itself, evidence of scientific validity.</p>
+                <a href="https://github.com/aryan107-commits/cosmic-echo/blob/main/scripts/background_validation_v3c.py" target="_blank" rel="noreferrer">View spatial validation script ↗</a>
+              </div>
+              <span class="step-symbol" aria-hidden="true">⌖</span>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-shell validation-section" id="validation" aria-labelledby="validation-title">
+      <div class="section-heading reveal">
+        <div>
+          <p class="eyebrow"><span class="eyebrow-line"></span> THE STANDARD / 03</p>
+          <h2 id="validation-title">A result is not<br><em>the same as evidence.</em></h2>
+        </div>
+        <p class="section-intro">COSMIC ECHO separates implementation, diagnostics and interpretation. The distinction is part of the method, not a footnote.</p>
+      </div>
+
+      <div class="validation-grid">
+        <article class="validation-card reveal">
+          <span class="card-index">A / 01</span>
+          <div class="validation-icon" aria-hidden="true">⌘</div>
+          <h3>Reproducibility</h3>
+          <p>Record inputs, parameters, software versions and intermediate products so that computational steps can be repeated and inspected.</p>
+          <span class="card-foot">TRACE THE PROCESS</span>
+        </article>
+        <article class="validation-card reveal">
+          <span class="card-index">B / 02</span>
+          <div class="validation-icon" aria-hidden="true">⌖</div>
+          <h3>Quantitative checks</h3>
+          <p>Examine mask coverage, invalid values, local noise behaviour and spatial correlation rather than relying on appearance alone.</p>
+          <span class="card-foot">MEASURE WHAT REMAINS</span>
+        </article>
+        <article class="validation-card reveal">
+          <span class="card-index">C / 03</span>
+          <div class="validation-icon" aria-hidden="true">◇</div>
+          <h3>Independent review</h3>
+          <p>Challenge assumptions, compare alternatives and document limitations before promoting a computational result to a scientific claim.</p>
+          <span class="card-foot">KEEP CLAIMS EARNED</span>
+        </article>
+      </div>
+
+      <div class="parameter-band reveal">
+        <div>
+          <p class="eyebrow">CURRENT V2 SCRIPT DEFAULTS</p>
+          <p class="parameter-note">These are implementation settings in the repository, not validated optimum values.</p>
+        </div>
+        <div class="parameter"><strong>64 × 64</strong><span>BACKGROUND BOX</span></div>
+        <div class="parameter"><strong>5.0σ</strong><span>DETECTION THRESHOLD</span></div>
+        <div class="parameter"><strong>3 px</strong><span>MASK DILATION RADIUS</span></div>
+      </div>
+    </section>
+
+    <section class="project-section" id="project" aria-labelledby="project-title">
+      <div class="section-shell project-inner">
+        <div class="project-copy reveal">
+          <p class="eyebrow"><span class="eyebrow-line"></span> THE PROJECT / 04</p>
+          <h2 id="project-title">Curiosity, made<br><em>computable.</em></h2>
+          <p>COSMIC ECHO is an independent research project built around Python, astronomy libraries and careful computational validation. The repository is the source of truth for code, methods and project progress.</p>
+          <div class="project-actions">
+            <a class="button button-primary" href="https://github.com/aryan107-commits/cosmic-echo" target="_blank" rel="noreferrer">Explore the repository <span aria-hidden="true">↗</span></a>
+            <a class="text-link" href="https://github.com/aryan107-commits/cosmic-echo/blob/main/README.md" target="_blank" rel="noreferrer">Read the research overview ↗</a>
+          </div>
+        </div>
+        <div class="project-mark reveal" aria-hidden="true">
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <div class="orbit orbit-three"></div>
+          <div class="orbit-core"></div>
+          <span class="orbit-label orbit-label-a">SIGNAL</span>
+          <span class="orbit-label orbit-label-b">STRUCTURE</span>
+          <span class="orbit-label orbit-label-c">EVIDENCE</span>
+        </div>
+      </div>
+      <div class="section-shell project-bottom"><span>BUILT TO QUESTION, NOT TO ASSUME.</span><span>EST. 2026 / INDEPENDENT RESEARCH</span></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="footer-brand" href="#top">COSMIC <span>ECHO</span></a>
+    <p>Exploring the structure behind astronomical observations.</p>
+    <div class="footer-links">
+      <a href="https://github.com/aryan107-commits/cosmic-echo" target="_blank" rel="noreferrer">GitHub ↗</a>
+      <a href="#top">Back to top ↑</a>
+    </div>
+    <small>© <span id="current-year">2026</span> COSMIC ECHO · AN INDEPENDENT SCIENTIFIC COMPUTING PROJECT</small>
+  </footer>
+</body>
+</html>
