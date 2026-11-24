@@ -19,3 +19,6 @@ data/processed/*.csv
 data/*.csv
 # Keep all local research data out of Git
 data/
+!data/
+data/*
+!data/README.md

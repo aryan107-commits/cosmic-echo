@@ -1,80 +1,126 @@
+# COSMIC ECHO
 
-<h1 align="center">Hi, I'm Aryan.</h1>
+### Exploring the structure behind astronomical observations
 
-<h3 align="center">
-  Engineering · Scientific Computing · Mathematical Problem-Solving
-</h3>
+**COSMIC ECHO** is an independent scientific computing project focused on the analysis of astronomical imaging data from NASA's SPHEREx mission.
 
-<p align="center">
-  I build software, investigate technical problems, and explore
-  the intersection of mathematics and computation.
-</p>
+The project investigates image-background estimation, source masking, variance-aware diagnostics, and statistical validation through reproducible Python workflows.
 
 <p align="center">
-  <a href="https://github.com/aryan107-commits">
-    GitHub
-  </a>
-  ·
-  <a href="https://github.com/aryan107-commits/cosmic-echo">
-    Featured Project
-  </a>
+  <strong>ASTRONOMY · SCIENTIFIC COMPUTING · IMAGE ANALYSIS</strong>
 </p>
 
 ---
 
-## Current Focus
+## Research Overview
 
-**COSMIC ECHO** — an ongoing astronomical data analysis project
-working with NASA SPHEREx imagery.
+Astronomical images contain more than the celestial sources being observed. Background emission, instrumental effects, and observational noise can influence the interpretation of image data.
 
-My current work focuses on image preprocessing, background
-estimation, source masking, variance analysis, and validation
-of scientific image-processing methods.
+COSMIC ECHO aims to develop and evaluate computational methods for examining these components.
 
-[Explore the repository →](https://github.com/aryan107-commits/cosmic-echo)
+### Current research directions
 
-## Areas of Interest
+- SPHEREx archive exploration and FITS data retrieval
+- Spatially varying background estimation
+- Astronomical source detection and masking
+- Quality-mask decomposition
+- Variance-aware image diagnostics
+- Multi-scale spatial correlation analysis
 
-- Scientific computing and astronomical data analysis
-- Numerical methods and mathematical problem-solving
-- Algorithms, data structures, and software engineering
-- Data visualization and computational research
+## Research Pipeline
 
-## Technologies
+```text
+SPHEREx Archive
+      |
+      v
+Observation Retrieval
+      |
+      v
+FITS Inspection
+      |
+      v
+Quality Assessment
+      |
+      v
+Source Detection & Masking
+      |
+      v
+Background Estimation
+      |
+      v
+Background Correction
+      |
+      v
+Statistical Validation
+```
 
-**Languages**
+*This represents the intended analytical workflow; individual stages are at different levels of implementation.*
 
-Python · C · C++ · Java · JavaScript
+## Technology
 
-**Scientific Computing**
-
-NumPy · SciPy · Astropy · Photutils · Matplotlib
-
-**Development**
-
-Git · GitHub · VS Code
-
-*Tools listed here should reflect technologies you have
-actually used. Add or remove them as your work evolves.*
-
-## Featured Work
-
-| Project | Focus |
+| Domain | Tools |
 |---|---|
-| [COSMIC ECHO](https://github.com/aryan107-commits/cosmic-echo) | Astronomical image analysis and scientific computing |
+| Programming | Python |
+| Numerical analysis | NumPy, SciPy |
+| Astronomy | Astropy, Astroquery |
+| Image processing | Photutils |
+| Data handling | Pandas |
+| Visualization | Matplotlib |
 
-More projects will be added as they reach a documented,
-reproducible state.
+## Repository Navigation
 
-## How I Work
+| Directory | Description |
+|---|---|
+| `scripts/` | Analysis and data-retrieval scripts |
+| `data/` | Local observational and processed data |
+| `docs/` | Research methodology and validation documentation |
 
-- Understand the problem before choosing the implementation.
-- Prefer reproducible experiments over unsupported claims.
-- Document assumptions, limitations, and results.
-- Improve projects through testing and iteration.
+## Current Development
+
+The current implementation includes:
+
+- SPHEREx archive query and observation retrieval
+- FITS data inspection
+- Photutils-based background estimation
+- Source and quality-mask analysis
+- Mask decomposition auditing
+- Multi-scale correlation diagnostics
+
+The project is under active development. Quantitative findings and scientific interpretations require further validation.
+
+## Reproducibility
+
+Large observational files and intermediate numerical products are excluded from Git.
+
+To begin, clone the repository:
+
+```bash
+git clone https://github.com/aryan107-commits/cosmic-echo.git
+cd cosmic-echo
+```
+
+Install the current dependencies:
+
+```bash
+python -m pip install numpy scipy matplotlib astropy photutils astroquery pandas
+```
+
+See [`scripts/README.md`](scripts/README.md) for the current script workflow and [`data/README.md`](data/README.md) for data organization.
+
+## Scientific Integrity
+
+COSMIC ECHO distinguishes computational implementation from scientific conclusions.
+
+A successful execution is not sufficient evidence of scientific validity. Methods, assumptions, uncertainty estimates, and limitations must be independently examined.
+
+## Author
+
+**Aryan Verma**
+
+Engineering · Scientific Computing · Mathematical Problem-Solving
+
+[GitHub Profile](https://github.com/aryan107-commits)
 
 ---
 
-<p align="center">
-  <i>Everything I'm not made me everything I am.</i>
-</p>
+*COSMIC ECHO — Exploring the structure behind astronomical observations.*
